@@ -1,0 +1,9 @@
+Package: SVGConverter
+Version: 0.9.5
+Section: user/other
+Priority: optional
+Maintainer: Kari-Pekka Koljonen <kkol@futurice.com>
+Architecture: i386
+Depends: libqt4-gui (>= 4.7), libqt4-svg, libqt4-xml
+Description: SVG to SVG Tiny Converter
+ This application converts SVG images to SVT Tiny images. Copyright 2011 by Nokia.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1 Basic//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd">
+<svg version="1.1" baseProfile="basic" id="Layer_1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100.559px"
+	 height="55.57px" viewBox="0 0 100.559 55.57" xml:space="preserve">
+   
+<font horiz-adv-x="2048" xml:id="nswb">
+<!-- Nokia Sans is a trademark of Nokia. -->
+<!-- Copyright: Copyright 2011 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="NokiaSansWide-Bold" units-per-em="2048" underline-position="-131" underline-thickness="168"/>
+<missing-glyph horiz-adv-x="1024" d="M51,0l0,1536l922,0l0,-1536M179,128l666,0l0,1280l-666,0z"/>
+<glyph unicode="G" horiz-adv-x="1325" d="M647,-16C462,-16 324,47 231,173C138,299 92,495 92,760C92,1000 151,1185 270,1314C388,1443 562,1507 791,1507C911,1507 1028,1492 1143,1462l0,-194C1036,1297 928,1311 819,1311C696,1311 603,1266 542,1175C480,1084 449,947 449,766C449,554 470,403 511,313C552,223 615,178 702,178C759,178 804,198 839,237C874,276 891,327 891,391l0,185l-131,0l0,196l465,0l0,-772l-201,0l-41,129C894,32 782,-16 647,-16z"/>
+<glyph unicode="S" horiz-adv-x="1087" d="M453,-16C329,-16 203,-1 76,29l0,202C215,197 333,180 430,180C517,180 582,196 625,229C668,261 690,310 690,375C690,432 669,479 628,516C586,553 509,601 397,659C282,718 200,783 151,852C102,921 78,1001 78,1092C78,1223 126,1325 222,1398C317,1471 447,1507 612,1507C722,1507 835,1496 950,1475l0,-201C848,1299 753,1311 664,1311C583,1311 522,1297 481,1269C440,1241 420,1199 420,1143C420,1087 440,1043 479,1011C518,978 585,938 680,891C807,828 897,762 951,691C1005,620 1032,537 1032,444C1032,293 983,179 884,101C785,23 641,-16 453,-16z"/>
+<glyph unicode="V" horiz-adv-x="1270" d="M426,0l-412,1491l355,0l295,-1186l299,1186l299,0l-431,-1491z"/>
+</font>
+<text transform="matrix(1 0 0 1 18.0942 40.3867)" font-family="'NokiaSansWide-Bold'" font-size="36">SVG</text>
+
+</svg>

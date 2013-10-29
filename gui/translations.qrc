@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+    <file>svg2svgt_en.qm</file>
+    <file>svg2svgt_fi.qm</file>
+    </qresource>
+</RCC>
+ 

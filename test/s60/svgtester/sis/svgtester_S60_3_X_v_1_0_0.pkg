@@ -1,0 +1,40 @@
+; Installation file for svgtester application
+;
+; This is an auto-generated PKG file by Carbide.
+; This file uses variables specific to Carbide builds that will not work
+; on command-line builds. If you want to use this generated PKG file from the
+; command-line tools you will need to modify the variables with the appropriate
+; values: $(EPOCROOT), $(PLATFORM), $(TARGET)
+;
+;Language - standard language definitions
+&EN
+
+; standard SIS file header
+#{"svgtester"},(0xE65D4A7B),1,0,0
+
+;Localised Vendor name
+%{"Vendor-EN"}
+
+;Unique Vendor name
+:"Vendor"
+
+;Supports Series 60 v 3.0
+[0x101F7961], 0, 0, 0, {"Series60ProductID"}
+
+;Files to install
+;You should change the source paths to match that of your environment
+;<source> <destination>
+"$(EPOCROOT)Epoc32\release\$(PLATFORM)\$(TARGET)\svgtester_0xE65D4A7B.exe"		-"!:\sys\bin\svgtester_0xE65D4A7B.exe"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\svgtester_0xE65D4A7B.rsc"		-"!:\resource\apps\svgtester_0xE65D4A7B.rsc"
+"$(EPOCROOT)Epoc32\data\z\private\10003a3f\apps\svgtester_0xE65D4A7B_reg.rsc"	-"!:\private\10003a3f\import\apps\svgtester_0xE65D4A7B_reg.rsc"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\svgtester_0xE65D4A7B.mif" -"!:\resource\apps\svgtester_0xE65D4A7B.mif"
+;;"$(EPOCROOT)Epoc32\data\z\resource\apps\svgtester_in.mif" -"!:\resource\apps\svgtester_in.mif"
+;;"$(EPOCROOT)Epoc32\data\z\resource\apps\svgtester_exp.mif" -"!:\resource\apps\svgtester_exp.mif"
+"$(EPOCROOT)Epoc32\data\z\resource\apps\svgtester_out.mif" -"!:\resource\apps\svgtester_out.mif"
+;"..\help\svgtester_0xE65D4A7B.hlp"							 -"!:\resource\help\svgtester_0xE65D4A7B.hlp"
+
+; Add any installation notes if applicable
+;"svgtester.txt"		-"!:\private\E65D4A7B\svgtester.txt"
+
+;required for application to be covered by backup/restore facility 
+"..\sis\backup_registration.xml"		-"!:\private\E65D4A7B\backup_registration.xml"

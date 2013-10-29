@@ -1,0 +1,52 @@
+/*
+============================================================================
+ Name		: bld.inf
+ Author	  : 
+ Copyright   : Your copyright notice
+ Description : This file provides the information required for building the
+				whole of a svgtester.
+============================================================================
+*/
+
+
+PRJ_PLATFORMS
+WINSCW ARMV5 GCCE
+
+// When building with Raptor, "gnumakefile" builds are no longer recommended.
+// But the extension Makefiles referenced here are only available in OS 9.5+.
+// Uncomment this to perform Raptor builds using old-style "gnumakefile".
+//#undef SBSV2
+
+
+#ifdef SBSV2
+
+PRJ_EXTENSIONS
+	
+	START EXTENSION s60/mifconv
+	OPTION TARGETFILE svgtester_0xE65D4A7B.mif
+	OPTION HEADERFILE svgtester_0xE65D4A7B.mbg
+	OPTION SOURCEDIR ../gfx
+	OPTION SOURCES -c32 qgn_menu_svgtester
+	END
+	
+	// help compiler is not always available; see similar comment in *.pkg file
+	//START EXTENSION techview/bldhelp
+	//OPTION HELPPROJECTFILE svgtester.cshlp
+	//OPTION HELPTOOLTARGETNAME svgtester_0xE65D4A7B.hlp
+	//END
+
+#else
+
+PRJ_MMPFILES
+
+	gnumakefile icons_scalable_dc.mk
+
+	// help compiler is not always available; see similar comment in *.pkg file
+	//gnumakefile ../help/build_help.mk
+
+#endif
+
+PRJ_MMPFILES
+
+svgtester.mmp
+gnumakefile icons.mk

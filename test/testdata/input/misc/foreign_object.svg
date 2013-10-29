@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+width="100%" height="100%" viewBox="0 0 300 140">
+
+<title>Chinese-English Unicode Table</title>
+<desc>
+A sample of XHTML in SVG, using the 'foreignObject' element 
+to include an XHTML 'table' with some Chinese-to-English 
+correspondances, with an ad-hoc SVG representation for 
+fallback.
+</desc>
+
+<switch>
+<foreignObject width="300" height="140"
+requiredExtensions="http://www.w3.org/1999/xhtml">
+<table xmlns="http://www.w3.org/1999/xhtml">
+<caption>Using Chinese Characters in SVG</caption>
+<tr>
+<th>English</th>
+<th>Chinese</th>
+</tr>
+<tr y="75">
+<td>moon</td>
+<td>&#x6708;</td>
+<td>6708</td>
+</tr>
+<tr y="100">
+<td>tree</td>
+<td>&#x6728;</td>
+<td>6728</td>
+</tr>
+<tr y="125">
+<td>water</td>
+<td>&#x6c34;</td>
+<td>6c34</td>
+</tr>
+</table>
+</foreignObject>
+
+<text font-size="18" fill="crimson" text-anchor="middle">
+<tspan x="150" y="25" font-weight="bold">Using Chinese Characters in SVG</tspan>
+<tspan y="50">
+<tspan x="50">English</tspan>
+<tspan x="150">Chinese</tspan>
+<tspan x="250">Unicode</tspan>
+</tspan>
+<tspan y="75">
+<tspan x="50">moon</tspan>
+<tspan x="150">&#x6708;</tspan>
+<tspan x="250">6708</tspan>
+</tspan>
+<tspan y="100">
+<tspan x="50">tree</tspan>
+<tspan x="150">&#x6728;</tspan>
+<tspan x="250">6728</tspan>
+</tspan>
+<tspan y="125">
+<tspan x="50">water</tspan>
+<tspan x="150">&#x6c34;</tspan>
+<tspan x="250">6c34</tspan>
+</tspan>
+</text>
+</switch>
+</svg>

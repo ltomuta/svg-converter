@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1200" height="1525" viewBox="0 0 1200 1525" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">  
+  <g font-family="Verdana">
+    <defs>
+      <g id="baseEllipses" font-size="20">
+        <ellipse cx="125" cy="125" rx="100" ry="50" fill="none" stroke="#888888" stroke-width="2"/>
+        <ellipse cx="225" cy="75" rx="100" ry="50" fill="none" stroke="#888888" stroke-width="2"/>
+        <text x="35" y="70">Arc start</text>
+        <text x="225" y="145">Arc end</text>
+      </g>
+    </defs>
+    <rect x="1" y="1" width="1198" height="1523" fill="none" stroke="blue" stroke-width="1"/>
+
+    <g id="relative_arcs" font-size="30">
+      <g>        
+        <text x="50" y="210">large-arc-flag=0</text>
+        <text x="50" y="250">sweep-flag=0</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 a100,50 0 0,0 100,50" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(400)">
+        <text x="400" y="50">relative arcs</text>
+        <text x="50" y="210">large-arc-flag=0</text>
+        <text x="50" y="250">sweep-flag=1</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 a100,50 0 0,1 100,50" fill="none" stroke="red" stroke-width="6"/>
+      </g>      
+      <g transform="translate(0, 250)">
+        <text x="50" y="210">large-arc-flag=1</text>
+        <text x="50" y="250">sweep-flag=0</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 a100,50 0 1,0 100,50" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(400, 250)">        
+        <text x="50" y="210">large-arc-flag=1</text>
+        <text x="50" y="250">sweep-flag=1</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 a100,50 0 1,1 100,50" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+    </g>
+    <g id="absolute_arcs" font-size="30">     
+      <g transform="translate(0, 500)">
+        <text x="50" y="210">large-arc-flag=0</text>
+        <text x="50" y="250">sweep-flag=0</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 A100,50 0 0,0 225,125" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(400, 500)">
+        <text x="400" y="50">absolute arcs</text>
+        <text x="50" y="210">large-arc-flag=0</text>
+        <text x="50" y="250">sweep-flag=1</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 A100,50 0 0,1 225,125" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(0, 750)">
+        <text x="50" y="210">large-arc-flag=1</text>
+        <text x="50" y="250">sweep-flag=0</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 A100,50 0 1,0 225,125" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(400, 750)">
+        <text x="50" y="210">large-arc-flag=1</text>
+        <text x="50" y="250">sweep-flag=1</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 A100,50 0 1,1 225,125" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+    </g>    
+    
+    <g id="rotated_arcs" font-size="30">
+      <g transform="translate(850, 700)">    
+        <text x="0" y="0">rotated arc</text>
+        <path d="M 225,125 A100,50 20 1,0 225, 125.00001" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+    </g>
+    
+    <g id="combined_arcs" font-size="30">
+      <g transform="translate(0, 1000)">
+        <text x="50" y="210">large-arc-flag=0</text>
+        <text x="50" y="250">sweep-flag=0</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 a100,50 0 0,0 100,50 a100,50 0 0,0 100, -50 a 100,50 0 0,0 -100 -50 a 100,50 0 0,0 -100 50" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(400, 1000)">
+        <text x="400" y="50">combined arcs</text>
+        <text x="50" y="210">large-arc-flag=0</text>
+        <text x="50" y="250">sweep-flag=1</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 A100,50 0 0,0 225,125 A100,50 0 0,0 325, 75 A 100,50 0 0,0 225 25 A 100,50 0 0,0 125 75" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(0, 1250)">
+        <text x="50" y="210">large-arc-flag=1</text>
+        <text x="50" y="250">sweep-flag=0</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 a100,50 0 0,0 100,50 100,50 0 0,0 100, -50 100,50 0 0,0 -100 -50 100,50 0 0,0 -100 50" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+      <g transform="translate(400, 1250)">
+        <text x="50" y="210">large-arc-flag=1</text>
+        <text x="50" y="250">sweep-flag=1</text>
+        <use xlink:href="#baseEllipses"/>
+        <path d="M 125,75 A100,50 0 0,0 225,125 100,50 0 0,0 325, 75 100,50 0 0,0 225 25 a 100,50 0 0,0 -100 50" fill="none" stroke="red" stroke-width="6"/>
+      </g>
+    </g>    
+  </g>
+</svg>

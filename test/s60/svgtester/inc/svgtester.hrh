@@ -1,0 +1,24 @@
+/*
+ ============================================================================
+ Name		: svgtester.hrh
+ Author	  : 
+ Copyright   : Your copyright notice
+ Description : This file contains declarations for constants of svgtester.
+ The file can be included in C++ or resource file.
+ ============================================================================
+ */
+#ifndef __SVGTESTER_HRH__
+#define __SVGTESTER_HRH__
+
+#define _UID3 0xE65D4A7B
+
+// svgtester enumerate command codes
+enum TsvgtesterIds
+	{
+	ECommand1 = 0x6001, // start value must not be 0
+	ECommand2,
+	EHelp,
+	EAbout
+	};
+
+#endif // __SVGTESTER_HRH__

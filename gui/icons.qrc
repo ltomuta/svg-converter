@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file>gfx/svg2svgt.svg</file>
+        <file>gfx/svg2svgt.png</file>
+        <file>gfx/converting_overlay.png</file>
+        <file>gfx/errors_overlay.png</file>
+        <file>gfx/success_overlay.png</file>
+        <file>gfx/warnings_overlay.png</file>
+        <file>gfx/expand.png</file>
+        <file>gfx/collapse.png</file>
+        <file>gfx/placeholder.svg</file>
+        <file>gfx/add_files.png</file>
+        <file>gfx/convert.png</file>
+        <file>gfx/convert_all.png</file>
+        <file>gfx/export_all.png</file>
+        <file>gfx/export_png.png</file>
+        <file>gfx/linked.png</file>
+        <file>gfx/unlinked.png</file>
+        <file>gfx/remove_files.png</file>
+        <file>gfx/about.png</file>
+    </qresource>
+</RCC>

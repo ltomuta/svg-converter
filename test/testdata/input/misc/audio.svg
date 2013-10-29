@@ -1,0 +1,34 @@
+<svg width='100%' height='100%' version='1.2'
+xmlns='http://www.w3.org/2000/svg'
+xmlns:xlink='http://www.w3.org/1999/xlink'
+xmlns:asv3='http://www.adobe.com/svg10-extensions'
+asv3:timeline='independent'
+externelResourcesRequired='true'>
+
+<title>Audio test</title>
+
+<switch>
+<g requiredFeatures='http://www.w3.org/TR/SVG12/feature#Audio'>
+<audio xlink:href='sealab.mp3' volume='7' type='audio/mp3'
+begin='mybutton.mouseover' end='mybutton.mouseout' repeatCount='indefinite'/>
+
+</g>
+<g requiredExtensions='http://www.adobe.com/svg10-extensions'>
+<asv3:audio xlink:href='sealab.mp3' begin='mybutton.mouseover' end='mybutton.mouseout' repeatCount='indefinite' />
+</g>
+
+</switch>
+
+<g id='mybutton'>
+<rect width='230' height='50' x='20' y='20' rx='10'
+fill='cornflowerblue' stroke='#000080' stroke-width='5'/>
+<text x='135' y='55'
+fill='#000080' text-anchor='middle' pointer-events='none' font-size='30'>
+
+Play!
+</text>
+</g>
+
+<rect x='0' y='0' width='270' height='90' fill='none' stroke='#777'/>
+
+</svg>

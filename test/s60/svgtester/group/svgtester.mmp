@@ -1,0 +1,64 @@
+/*
+============================================================================
+ Name		: svgtester.mmp
+ Author	  : 
+ Copyright   : Your copyright notice
+ Description : This is the project specification file for svgtester.
+============================================================================
+*/
+APP_LAYER_SYSTEMINCLUDE
+
+
+TARGET			svgtester_0xE65D4A7B.exe
+TARGETTYPE		exe
+UID		  0x100039CE 0xE65D4A7B
+
+SOURCEPATH		..\src
+SOURCE			svgtester.cpp
+SOURCE			svgtesterApplication.cpp
+SOURCE			svgtesterAppView.cpp
+SOURCE			svgtesterAppUi.cpp
+SOURCE			svgtesterDocument.cpp
+
+SOURCEPATH		..\data
+
+START RESOURCE	svgtester.rss
+HEADER
+TARGET svgtester_0xE65D4A7B
+TARGETPATH resource\apps
+END //RESOURCE
+
+START RESOURCE	svgtester_reg.rss
+TARGET svgtester_0xE65D4A7B_reg
+TARGETPATH 	  \private\10003a3f\apps
+END //RESOURCE
+
+
+
+USERINCLUDE	   ..\inc
+USERINCLUDE    ..\help
+
+SYSTEMINCLUDE	 \epoc32\include
+
+LIBRARY		   euser.lib
+LIBRARY		   apparc.lib
+LIBRARY		   cone.lib
+LIBRARY		   eikcore.lib
+LIBRARY		   avkon.lib
+LIBRARY		   commonengine.lib
+LIBRARY		   efsrv.lib 
+LIBRARY		   estor.lib
+LIBRARY        aknnotify.lib
+LIBRARY        hlplch.lib bafl.lib eikcoctl.lib eikctl.lib aknicon.lib egul.lib fbscli.lib
+ 
+
+LANG SC
+
+VENDORID	  	  0
+SECUREID		  0xE65D4A7B
+CAPABILITY	  	  ReadUserData
+
+#ifdef ENABLE_ABIV2_MODE
+  DEBUGGABLE_UDEBONLY
+#endif
+// End of File
