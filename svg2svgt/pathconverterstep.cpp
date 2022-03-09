@@ -142,21 +142,29 @@ private:
         Tracer trace(Q_FUNC_INFO);
         skip();
 	QString s;
-	// Both space and comma seem to be acceptable delimiters.
-	while(m_string.length() > 0 && 
-	      m_string[0] != ' ' &&  m_string[0] != ',') {
-	    QChar c = m_string[0];
-	    m_string.remove(0,1);
+        bool isMantissa { false };
+        // Both space and comma seem to be acceptable delimiters.
+        while (m_string.length() > 0 && m_string[0] != ' ' && m_string[0] != ',') {
+            QChar c = m_string[0];
+            // Some editors string spaces around numbers, so that 1.58-.33 must be interpreted
+            // as two different doubles
+            if (isMantissa && (c == '.' || c == '-'))
+                // Break early so that we don't remove any more chars from the input string
+                break;
+            m_string.remove(0, 1);
 
-	    // Acceptable characters
-	    if(c.isNumber() || c == '.' || c == '-') {
-		s.append(c);
-	    } else {
-		m_ok = false;
-		break;
-	    }
-	}
-	return s;
+            // Acceptable characters
+            if (c.isNumber() || c == '-') {
+                s.append(c);
+            } else if (c == '.') {
+                isMantissa = true;
+                s.append(c);
+            } else {
+                m_ok = false;
+                break;
+            }
+        }
+        return s;
     }
 
     // Pull a double
