@@ -24,32 +24,35 @@
 #include "svglistitemdelegate.h"
 #include "conversiontask.h"
 #include "exporttask.h"
-#include "tracer.h"
 
+#include <svg2svgt/tracer.h>
+
+#include <QtCore/QDebug>
 #include <QtCore/QFileInfo>
+#include <QtCore/QMimeData>
 #include <QtCore/QThread>
 #include <QtCore/QThreadPool>
-#include <QtGui/QFileDialog>
+#include <QtWidgets/QFileDialog>
 #include <QtGui/QDesktopServices>
-#include <QtGui/QListWidget>
-#include <QtGui/QListWidgetItem>
+#include <QtCore/QStandardPaths>
+#include <QtWidgets/QListWidget>
+#include <QtWidgets/QListWidgetItem>
 #include <QtGui/QPixmapCache>
 #include <QtGui/QPixmap>
-#include <QtGui/QProgressBar>
+#include <QtWidgets/QProgressBar>
 #include <QtGui/QPainter>
 #include <QtGui/QStandardItemModel>
 #include <QtGui/QStandardItem>
 #include <QtGui/QDragEnterEvent>
 #include <QtGui/QDropEvent>
 #include <QtSvg/QSvgRenderer>
-
-
-#include <QtCore/QDebug>
+#include <QWidget>
 
 #include <iostream>
 
 using std::cerr;
 using std::endl;
+using svg2svgt::Tracer;
 
 static const int THUMBNAIL_SIZE = 128;
 
@@ -57,7 +60,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow), m_delegate(0), m_aboutDialog(0), m_exportDialog(0), m_fileDialog(0), m_replaceDialog(0),
     m_progress(0), m_currentFilename(""), m_outputDir(""), m_lastDir(""),
-    m_tempDir(QDir::toNativeSeparators(QDesktopServices::storageLocation(QDesktopServices::TempLocation))),
+    m_tempDir(QDir::toNativeSeparators(QStandardPaths::writableLocation(QStandardPaths::TempLocation))),
     m_currentProgress(0), m_overwrite(true), m_dontAskAgain(false)
 {
     Tracer trace(Q_FUNC_INFO);
@@ -119,7 +122,7 @@ void MainWindow::dropEvent(QDropEvent* event)
 void MainWindow::on_browseForFolderButton_clicked()
 {
     Tracer trace(Q_FUNC_INFO);
-    QString startupDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+    QString startupDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     m_outputDir = QFileDialog::getExistingDirectory(this, tr("Select output folder"), startupDir);
     ui->outputFolderLineEdit->setText(m_outputDir);
     update();
@@ -139,7 +142,7 @@ void MainWindow::on_addFilesButton_clicked()
 {
     Tracer trace(Q_FUNC_INFO);
     if (m_lastDir.isEmpty()) {
-        m_lastDir = QDesktopServices::storageLocation(QDesktopServices::DocumentsLocation);
+        m_lastDir = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
     }
     QStringList files = QFileDialog::getOpenFileNames(this, tr("Open SVG-files"), m_lastDir, tr("SVG-images (*.svg)"));
     addFiles(files);
@@ -438,7 +441,7 @@ static int displayableCount(const QStringList& stringList, bool skipHeaders)
     return count;
 }
 
-void MainWindow::updateMessages(const Logger& logger)
+void MainWindow::updateMessages(const svg2svgt::Logger& logger)
 {
     Tracer trace(Q_FUNC_INFO);
 

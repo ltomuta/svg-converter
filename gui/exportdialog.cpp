@@ -18,8 +18,13 @@
 
 #include "exportdialog.h"
 #include "ui_exportdialog.h"
-#include "tracer.h"
-#include <QtGui/QColorDialog>
+
+#include <svg2svgt/tracer.h>
+
+#include <QtGui/QValidator>
+#include <QtWidgets/QColorDialog>
+
+using svg2svgt::Tracer;
 
 ExportDialog::ExportDialog(QWidget *parent) :
     QDialog(parent),

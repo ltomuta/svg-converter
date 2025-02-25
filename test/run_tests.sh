@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BIN=../binaries/svg2svgt
+BIN=$1
 OUTDATA_DIR=testdata/output
 TESTDATA_DIR=testdata/input
 #EXPECTDATA_DIR=testdata/expected
@@ -40,26 +40,26 @@ tester() {
     # xmllint converted output file
     xmllint --format --output $out_linted $out_unmodified 2>$out_lintlog
     if [ `cat $out_lintlog | wc -c` -ne "0" ]; then
-	echo "-- Error! xmllint found errors in the converted file, see" $out_lintlog
-	return
+        echo "-- Error! xmllint found errors in the converted file, see" $out_lintlog
+        exit 1
     else
-	rm $out_lintlog   # Remove empty log
+        rm $out_lintlog   # Remove empty log
     fi
-    
+
     # xmllint expect file too, if available.
     if [ -e $exp ]; then
-	xmllint --format --output $exp_linted $exp 2>$exp_lintlog
-	if [ `cat $exp_lintlog | wc -c` -ne "0" ]; then
-	    echo "-- Error! xmllint found errors in the expectation file, see" $exp_lintlog
-	    return
-	else
-	    rm $exp_lintlog   # Remove empty log
-	fi 
-	
+        xmllint --format --output $exp_linted $exp 2>$exp_lintlog
+        if [ `cat $exp_lintlog | wc -c` -ne "0" ]; then
+            echo "-- Error! xmllint found errors in the expectation file, see" $exp_lintlog
+            exit 1
+        else
+            rm $exp_lintlog   # Remove empty log
+        fi
+
        # Simple diff between linted files
-	diff -q $out_linted $exp_linted
+        diff -q $out_linted $exp_linted
     else
-	echo "-- Expect file not found, diff skipped!"
+        echo "-- Notice: Expect file not found, diff skipped!"
     fi
 }
 

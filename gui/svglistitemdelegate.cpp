@@ -17,9 +17,9 @@
  **/
 
 #include "svglistitemdelegate.h"
-#include "tracer.h"
 
 #include <QtGui/QPainter>
+#include <QtGui/QPainterPath>
 #include <QtGui/QPixmapCache>
 #include <QtSvg/QSvgRenderer>
 

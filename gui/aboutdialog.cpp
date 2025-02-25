@@ -18,8 +18,11 @@
 
 #include "aboutdialog.h"
 #include "ui_aboutdialog.h"
-#include "tracer.h"
-#include "processorengine.h"
+
+#include <svg2svgt/tracer.h>
+#include <svg2svgt/processorengine.h>
+
+using svg2svgt::Tracer;
 
 AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
@@ -28,7 +31,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
     Tracer trace(Q_FUNC_INFO);
     ui->setupUi(this);
     ui->textBrowser->clear();
-    ui->textBrowser->setText(ProcessorEngine::getVersionStringFormatted());
+    ui->textBrowser->setText(svg2svgt::ProcessorEngine::getVersionStringFormatted());
 }
 
 AboutDialog::~AboutDialog()

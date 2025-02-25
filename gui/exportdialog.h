@@ -30,7 +30,7 @@ class ExportDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit ExportDialog(QWidget *parent = 0);
+    explicit ExportDialog(QWidget *parent = nullptr);
     virtual ~ExportDialog();
 public:
     QList<QSize> getSizes() const;

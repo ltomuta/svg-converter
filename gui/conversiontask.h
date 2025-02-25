@@ -20,10 +20,13 @@
 #define CONVERSIONTASK_H
 
 #include "task.h"
-#include "processorengine.h"
 
+#include <svg2svgt/processorengine.h>
+
+namespace svg2svgt {
 class RuleEngine;
 class ProcessorEngine;
+}
 
 class ConversionTask : public Task
 {
@@ -36,8 +39,8 @@ public:
 private:
     void setupEngine();
 private:
-    RuleEngine* m_rules;
-    ProcessorEngine* m_engine;
+    svg2svgt::RuleEngine* m_rules;
+    svg2svgt::ProcessorEngine* m_engine;
     QString m_outputFilename;
 };
 

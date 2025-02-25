@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+ <id type="desktop">svg2svgt.desktop</id>
+ <metadata_license>CC0-1.0</metadata_license>
+ <project_license>LGPL-2.1+</project_license>
+ <name>Svg2SvgT</name>
+ <summary>Svg to Svg Tiny converter</summary>
+ <keywords>
+  <keyword>svg</keyword>
+  <keyword>converter</keyword>
+ </keywords>
+ <description>
+  <p>Svg2SvgT is an application to convert Svg images to Svg Tiny images.</p>
+ </description>
+ <screenshots>
+  <screenshot type="default">
+   <image>https://raw.githubusercontent.com/manisandro/svg2svgt/gh-pages/screenshot.png</image>
+   <caption>svg2svgt-gui</caption>
+  </screenshot>
+ </screenshots>
+ <url type="homepage">https://github.com/manisandro/svg2svgt</url>
+ <update_contact>manisandro@gmail.com</update_contact>
+</component>

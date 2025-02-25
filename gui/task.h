@@ -21,7 +21,10 @@
 
 #include <QtCore/QRunnable>
 #include <QtCore/QString>
+
+namespace svg2svgt {
 class Logger;
+}
 
 class Task : public QRunnable {
 public:
@@ -31,10 +34,10 @@ public:
     virtual void run() = 0;
     virtual QString taskName() const = 0;
     virtual QString filename() const { return m_filename; }
-    const Logger& logger() const { return *m_logger; }
+    const svg2svgt::Logger& logger() const { return *m_logger; }
 protected:
     QString m_filename;
-    Logger* m_logger;
+    svg2svgt::Logger* m_logger;
 };
 
 #endif // TASK_H

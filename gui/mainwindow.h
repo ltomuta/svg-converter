@@ -19,10 +19,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtGui/QMainWindow>
 #include "exportdialog.h"
 #include "svglistitemdelegate.h"
 #include "existingfiledialog.h"
+
+#include <QtWidgets/QMainWindow>
 
 // Forward declarations
 namespace Ui {
@@ -40,7 +41,10 @@ class QProgressBar;
 class QStandardItemModel;
 class QDragEnterEvent;
 class QDropEvent;
+
+namespace svg2svgt {
 class Logger;
+}
 
 typedef QPair<QModelIndex, FileAction> ActionPair;
 typedef QList<ActionPair> ActionList;
@@ -51,8 +55,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = nullptr);
     virtual ~MainWindow();
+    void addFiles(const QStringList& filenames);
 protected:
     void dragEnterEvent(QDragEnterEvent* event);
     void dropEvent(QDropEvent* event);
@@ -72,12 +77,11 @@ private:
     void updateOutputDir(const QString& dir);
     QModelIndexList getSelectedFiles();
     QModelIndexList getAllFiles();
-    void addFiles(const QStringList& filenames);
     void doConversion(const QModelIndexList& files, const QString& outputDir);
     void doExport(const QModelIndexList& files, const QString& outputDir, QList<QSize> sizes, QColor background);
     bool checkOutputFiles(const QModelIndexList& files, ActionList& actions);
     void resetBeforeStart();
-    void updateMessages(const Logger& logger);
+    void updateMessages(const svg2svgt::Logger& logger);
     int showExportDialog();
     void deleteTemporaries();
     QString getConversionOutputFilename(const QString& filename);

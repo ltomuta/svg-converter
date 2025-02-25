@@ -17,20 +17,23 @@
  **/
 
 #include "conversiontask.h"
-#include "ruleengine.h"
-#include "processorengine.h"
-#include "tracer.h"
+
+#include <svg2svgt/ruleengine.h>
+#include <svg2svgt/processorengine.h>
+#include <svg2svgt/tracer.h>
 
 #include <QtCore/QObject> // tr
 #include <QtCore/QFileInfo>
 #include <QtCore/QDir>
 #include <QtCore/QDebug>
 
+using svg2svgt::Tracer;
+
 ConversionTask::ConversionTask(const QString& filename, const QString& outputFilename) :
     Task(filename), m_outputFilename(outputFilename)
 {
     Tracer trace(Q_FUNC_INFO);
-    m_logger = new Logger;
+    m_logger = new svg2svgt::Logger;
     setupEngine();
 }
 
@@ -77,16 +80,14 @@ void ConversionTask::setupEngine()
 {
     Tracer trace(Q_FUNC_INFO);
 
-    static const QString RULES_FILE(":/rules.xml");
-
     // Create rules
-    m_rules = new RuleEngine(*m_logger);
-    if (m_rules->setRulesFile(RULES_FILE) != EXIT_SUCCESS) { // EXIT_SUCCESS
-	m_logger->error(QObject::tr("Could not read conversion rules from file %1").arg(RULES_FILE));
+    m_rules = new svg2svgt::RuleEngine(*m_logger);
+    if (m_rules->setDefaultRules() != EXIT_SUCCESS) { // EXIT_SUCCESS
+	m_logger->error(QObject::tr("Could not set rules"));
         return;
     }
 
     // Create engine
-    m_engine = new ProcessorEngine(*m_rules, *m_logger);
+    m_engine = new svg2svgt::ProcessorEngine(*m_rules, *m_logger);
 }
 

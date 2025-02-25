@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Svg2SvgT
+GenericName=Svg to Svg Tiny converter
+Exec=svg2svgt-gui %U
+Icon=svg2svgt
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Graphics;
+MimeType=image/svg+xml;
+Keywords=svg;converter;

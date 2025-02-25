@@ -1,0 +1,9 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+libdir=${prefix}/@PC_LIB_DIR@
+includedir=${prefix}/@PC_INCLUDE_DIR@/
+
+Name: svg2svgt
+Description: SVG to SVG Tiny conversion library
+Version: @SVG2SVGT@
+Libs: -L${libdir} -lsvg2svgt
+Cflags: -I${includedir}

@@ -44,7 +44,7 @@ class SvgListItemDelegate : public QAbstractItemDelegate
 {
     Q_OBJECT
 public:
-    explicit SvgListItemDelegate(QObject *parent = 0);
+    explicit SvgListItemDelegate(QObject *parent = nullptr);
     virtual ~SvgListItemDelegate();
 
     void setThumbnailSize(int w, int h);

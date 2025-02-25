@@ -26,3 +26,4 @@ test/testdata/output/filters/*.lintlog
 test/testdata/output/complex/*.svg
 test/testdata/output/complex/*.lint
 test/testdata/output/complex/*.lintlog
+/.project

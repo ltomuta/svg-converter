@@ -21,6 +21,7 @@
 
 #include "task.h"
 #include "exportdialog.h"
+
 #include <QtCore/QSize>
 #include <QtGui/QColor>
 #include <QtSvg/QSvgRenderer>

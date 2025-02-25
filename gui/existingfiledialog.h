@@ -36,7 +36,7 @@ class ExistingFileDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ExistingFileDialog(QWidget *parent = 0);
+    explicit ExistingFileDialog(QWidget *parent = nullptr);
     virtual ~ExistingFileDialog();
 
     void setDontAskAgain(bool value);
